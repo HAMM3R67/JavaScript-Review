@@ -34,18 +34,18 @@ var evenArray = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
   }
   var randomArray = [0, 3, 4, 5, 6, 7, 9, 14, 17, 24, 25, 26, 29, 30];
 
-  function randomTF(){  
+  function randomTf(){  
     var random = getRandomArbitrary();
     console.log(random);
     for(var i=0; i=randomArray.length; i++){
       if(random === randomArray[i]){
-        alert(true);
+        return true;
       }
     }
-    alert(false);
+    return false;
   }
 
-randomTF();
+randomTf();
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
@@ -54,8 +54,8 @@ randomTF();
   var first = [1, 2, 3, 4, 5];
   var second;
 
-  var second = first;
-  second.push
+  var second = first.slice();
+  second.push(6, 7);
   
 
   alert(first) //[1,2,3,4,5];
