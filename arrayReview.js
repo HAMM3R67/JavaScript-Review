@@ -69,8 +69,20 @@ randomTf();
 
   //write a function called longest that takes in our sentence variable, and returns the longest word in that sentence.
   var sentence = "Dev Mountain is the best"
+ var sentSplit = sentence.split(" ");
+ var lgth = 0;
+var long;
 
-  //code here
+  function longest(){
+      for(var i=0; i < sentSplit.length; i++){
+    if(sentSplit[i].length > lgth){
+        var lgth = sentSplit[i].length;
+        long = sentSplit[i];
+    }      
+} 
+
+alert(long);
+  }
 
 
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
