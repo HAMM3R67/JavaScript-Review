@@ -36,7 +36,7 @@ var evenArray = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
   };
   var randomArray = [0, 3, 4, 5, 6, 7, 9, 14, 17, 24, 25, 26, 29, 30];
 
-  function randomFinder(){  
+  var randomFinder = function(){  
     var random = getRandomArbitrary();
     console.log(random);
     for(var i = 0; i < randomArray.length; i++){
@@ -72,20 +72,19 @@ randomFinder();
 
   //write a function called longest that takes in our sentence variable, and returns the longest word in that sentence.
   var sentence = "Dev Mountain is the best"
- var sentSplit = sentence.split(" ");
- var lgth = 0;
-var long;
 
-  function longest(){
-      for(var i=0; i < sentSplit.length; i++){
-    if(sentSplit[i].length > lgth){
-        var lgth = sentSplit[i].length;
-        long = sentSplit[i];
-    }      
-} 
-
-console.log(long);
+var longest = function(str){
+  var splitStr = str.split(' ');   //this line takes a whatever string is put into the function and splits it into 
+  var longestWord = '';            //this is a variable starting point to compare each index (word) that we just created
+  for(var i = 0; i < splitStr.length; i++){   //this loops through the index we created at the beginning of the function
+    if(splitStr[i].length > longestWord.length){   //this if statement looks at each index within the index (ie Dev is and index but it is also 'D', 'E', 'V') we are seeing if it is greater than longestWord (on the first loop it is '' blank)
+      longestWord = splitStr[i];  //if the above statement is true, this line reassigns longestWord to that index string, then the loop begins again.
+    }
   }
+  return longestWord;
+}
+
+longest(sentence);
 
 
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -96,10 +95,20 @@ console.log(long);
   var myPoem = 'What is a jQuery but a misunderstood object?'
   //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
-  var capitalize = function(){
-    myPoem.toUpperCase;
-    return myPoem
-  }
+  var capitalize = function(str){
+    var newStr = "";    
+    var newArr = [];
+    if(str.indexOf("-") != -1){
+        newArr = str.split("-");
+        for(var i = 1 ; i < newArr.length ; i++){
+            newArr[i] = newArr[i].charAt(0).toUpperCase() + newArr[i].substr(1);
+        }       
+        newStr = newArr.join("");
+    }
+    return newStr;
+}
+
+  console.log(capitalize(myPoem));
 
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -107,3 +116,8 @@ console.log(long);
 
   var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+
+function getVowels(str) {
+  var m = str.match(/[aeiou]/gi);
+  return m === null ? 0 : m.length;
+}
