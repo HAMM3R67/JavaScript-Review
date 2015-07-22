@@ -16,13 +16,15 @@ last(); // 3
 var evenArray = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 
   function evenFinder(){
-  for (var i = 0; i = evenArray.length; i++) {
+  for (var i = 0; i < evenArray.length; i++) {
       if(evenArray[i] % 2 !== 0){
         evenArray.splice(i, 1)
         i--
       }        
     }
   }
+  
+  evenArray
 
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -40,6 +42,7 @@ var evenArray = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
     for(var i = 0; i < randomArray.length; i++){
       if(random === randomArray[i]){
         alert(true);
+        return;
       }
     }
     alert(false);
