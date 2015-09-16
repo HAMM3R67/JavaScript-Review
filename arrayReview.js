@@ -2,11 +2,11 @@ var threeItems = [1, 2, 3];
 //create a function named 'last' that returns the last item from 'threeItems'
 //alert the result of your function
 
-function last() {
-  return threeItems.length[];
+var last = function (){
+  return threeItems.length
 }
 
-last(); // 3
+last(); //Should be 3
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -15,16 +15,18 @@ last(); // 3
 //Loop through evenArray removing all values that aren't even 
 var evenArray = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 
-  function evenFinder(){
-  for (var i = 0; i < evenArray.length; i++) {
+  var removeOdd = function(){
+    for(var i = 0; i < evenArray.length; i++){
       if(evenArray[i] % 2 !== 0){
-        evenArray.splice(i, 1)
-        i--
-      }        
+        evenArray.splice(i, 1);
+        i--;  //This will take a step back to double check and not skip when there are two odd numbers together
+      }
     }
   }
-  
-  evenArray
+
+removeOdd(); //calls the removeOdd function
+
+evenArray //only even numbers should remain
 
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -36,19 +38,20 @@ var evenArray = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
   };
   var randomArray = [0, 3, 4, 5, 6, 7, 9, 14, 17, 24, 25, 26, 29, 30];
 
-  var randomFinder = function(){  
-    var random = getRandomArbitrary();
-    console.log(random);
-    for(var i = 0; i < randomArray.length; i++){
-      if(random === randomArray[i]){
-        alert(true);
+    var findRandom = function(){
+      var randNum = getRandomArbitrary(); //setting the random number function to a variable
+      console.log(randNum);  //this just shows me what the number is so I can make sure my check is working
+      for(var i = 0; i < randomArray.length; i++){
+      if(randNum === randomArray[i]){   //if the number we get matches one of the array properties
+        alert(true);                    //alert true
         return;
       }
     }
-    alert(false);
+    alert (false);                      //if it doesn't match alert false
   }
+  
+  findRandom();
 
-randomFinder();
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
@@ -56,15 +59,12 @@ randomFinder();
   //Create a copy of first and save it into second. Then, add 6 and 7 to the end of second. When you run this, first should be just [1,2,3,4,5] and second will be [1,2,3,4,5,6,7] if you created your copy correctly.
   var first = [1, 2, 3, 4, 5];
   var second;
-
-  var second = first.slice();
+  
+  var second = first.slice();  //The slice() method returns a shallow copy of a portion of an array into a new array object. In this case though, I don't set any parameters so it slices the whole array from first.
   second.push(6, 7);
   
-
-  alert(first) //[1,2,3,4,5];
-  alert(second) //[1,2,3,4,5,6,7];
-
-
+  first
+  second
 
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -74,7 +74,7 @@ randomFinder();
   var sentence = "Dev Mountain is the best"
 
 var longest = function(str){
-  var splitStr = str.split(' ');   //this line takes a whatever string is put into the function and splits it into 
+  var splitStr = str.split(' ');   //this line takes a whatever string is put into the function and splits it into an Array
   var longestWord = '';            //this is a variable starting point to compare each index (word) that we just created
   for(var i = 0; i < splitStr.length; i++){   //this loops through the index we created at the beginning of the function
     if(splitStr[i].length > longestWord.length){   //this if statement looks at each index within the index (ie Dev is and index but it is also 'D', 'E', 'V') we are seeing if it is greater than longestWord (on the first loop it is '' blank)
@@ -95,10 +95,14 @@ longest(sentence);
   var myPoem = 'What is a jQuery but a misunderstood object?'
   //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
-myPoem = myPoem.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-    return letter.toUpperCase();
-});
-alert(myPoem);
+  var capitalize = function(str) {
+    strVal = '';
+    str = str.split(' ');
+    for (var i = 0; i < str.length; i++) {
+        strVal += str[i].substring(0, 1).toUpperCase() + str[i].substring(1, str[i].length) + ' '
+    }
+    return strVal
+}
 
   /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
