@@ -71,11 +71,18 @@ var user = {
 
 //Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console. 
 
-  //Your code here
+  methodCollection.alertHello = function(){
+    alert("Hello")
+  }
+  
+  methodCollection.logHello = function(){
+    console.log("Hello")
+  }
 
 //Now call your alertHello and logHello methods. 
 
-  //Your code here
+  methodCollection.alertHello();
+  methodCollection.logHello();
 
 
 
@@ -86,5 +93,7 @@ var user = {
 //write a function called voweler that accepts a string, and returns an object with the keys being all the vowels in that string, and the values being how many times that particular vowel was in the string.
 //voweler("This is a test") --> {i: 2, a: 1, e: 1};
 
-
+var voweler = function(str){
+  return {}
+}
 
