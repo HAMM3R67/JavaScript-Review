@@ -40,7 +40,9 @@ var person = function(name, age, height, gender){
 
 //Now we want every instance of Animal to have a eat method. This method will choose a random item in that instances food array, then alert "(name) ' ate ' (whichever food was chosen)".
 
-  //code here
+  Animal.prototype.eat = function(){
+    return this[Math.floor(Math.random() * this.length)]
+  }
 
 
 //At this point, if we wanted to add something to every istance of person could we? 
