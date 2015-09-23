@@ -1,21 +1,35 @@
 //Create a Animal Constructor that has the following parameters. species, name, legs, color, food (which is an array of foods they can eat).
 
-  //code here
+var Animal = function(species, name, legs, color, food){
+  this.species = species,
+  this.name = name,
+  this.legs = legs,
+  this.color = color,
+  this.food = food
+}
 
 
 //Now create a person function that creates an object and returns it (not in constructor form) that has the following parameters. name, age, height, gender
 
-  //code here
-
-
+var person = function(){
+    var Person = function(name, age, height, gender){
+      this.name = name,
+      this.age = age,
+      this.height = height,
+      this.gender = gender
+    }
+}
 //Create a animal array and a person array.
 
-  //code here
+  var animalArr = [];
+  var personArr = [];
 
 
 //Create two instances of Animal and push those into your animal array
 
-  //code here
+  var bear = new Animal("bear", "kodiak", "four", "brown", "fish");
+  var tiger = new Animal("tiger", "bengal", "four", "orange", "gazzelle");
+  animalArr.push(bear, tiger)
 
 
 //Create two instances of person and push those into your person array.
