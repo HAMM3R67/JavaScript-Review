@@ -1,18 +1,27 @@
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category. 
 
-  //Your code here
+  var favoriteThings = {
+    band: "Brad Paisley",
+    food: "German",
+    person: "Brittney",
+    book: "Harry Potter",
+    movie: "Star Wars",
+    holiday: "Halloween"
+  };
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
-  //Your code here
+  favoriteThings.car = Tundra;
+  favoriteThings.brand = Apple;
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'. 
 
-  //Your code here
+  favoriteThings.food = "Lettuce";
+  favoriteThings.book = "50 Shades of Gray";
 
 //Now, alert your favorite person, then alert your favorite book.
 
-  //Your code here
+  alert(favoriteThings.person);
 
 
 
@@ -31,15 +40,24 @@ var user = {
 
 //Above you're given a user object. Loop through the user object checking to make sure that each value is truthy. If it's not truthy, remove it from the object. hint: 'delete'.
 
-  //Your code here
+  for (var k in user) {
+    if (!user[k]){
+        log( "delete " + k );
+        delete user[k];
+    }
+    
+    //else if (me[k]) user[k] = me[k];
+}
 
 //Once you get your truthy object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Your code here
+  user.name = "Trevor Schauerhamer";
+  user.username = "tcschauer@gmail.com";
+  
 
 //Now console.log your object and make sure it looks right.
 
-  //Your code here
+  console.log(user);
 
 
 
