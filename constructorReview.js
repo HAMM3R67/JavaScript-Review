@@ -1,4 +1,5 @@
 //Create a Animal Constructor that has the following parameters. species, name, legs, color, food (which is an array of foods they can eat).
+var food = ['berries', 'antelope', 'grass', 'fish']
 
 var Animal = function(species, name, legs, color, food){
   this.species = species,
@@ -27,8 +28,8 @@ var person = function(name, age, height, gender){
 
 //Create two instances of Animal and push those into your animal array
 
-  var bear = new Animal("bear", "kodiak", "four", "brown", "fish");
-  var tiger = new Animal("tiger", "bengal", "four", "orange", "gazzelle");
+  var bear = new Animal("bear", "kodiak", "four", "brown", food);
+  var tiger = new Animal("tiger", "bengal", "four", "orange", food);
   animalArr.push(bear, tiger)
 
 
