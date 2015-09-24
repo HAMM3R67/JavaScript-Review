@@ -48,7 +48,7 @@ var person = function(name, age, height, gender){
 
 //At this point, if we wanted to add something to every istance of person could we? 
 
-  //Yes or no? and why or why not?
+  //No, you would have to add something to each instance of person because it is not a Constructor Obect
 
 
 
